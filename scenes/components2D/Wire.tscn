@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b50wbqyyxrh21"]
+
+[ext_resource type="Script" uid="uid://dpve25vv827td" path="res://scripts/component scripts/wire.gd" id="1_u33on"]
+
+[node name="Wire" type="Line2D"]
+points = PackedVector2Array(0, 0)
+script = ExtResource("1_u33on")

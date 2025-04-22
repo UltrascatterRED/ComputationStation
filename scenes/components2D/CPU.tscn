@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4qhn4c2gny83"]
+
+[ext_resource type="PackedScene" uid="uid://b4xwsne13budd" path="res://scenes/components2D/ComponentBase.tscn" id="1_dyqd7"]
+[ext_resource type="Script" uid="uid://b6tmft2r08u2x" path="res://scripts/component scripts/cpu.gd" id="2_83yhr"]
+[ext_resource type="Texture2D" uid="uid://b8h18og78ijai" path="res://sprites/CPU_BaseCol.png" id="2_wm44w"]
+
+[node name="ComponentBase" instance=ExtResource("1_dyqd7")]
+script = ExtResource("2_83yhr")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_wm44w")
+
+[node name="Label" parent="." index="1"]
+visible = false
+text = "CPU: 
+the brain of the computer. 
+Recieves and processes 
+instructions that
+ultimately run the
+computer's various processes."

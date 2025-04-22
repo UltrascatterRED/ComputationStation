@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbrrgdgadtc6n"]
+
+[ext_resource type="Script" uid="uid://bxmi1pvx8c5gd" path="res://scripts/vrm3d.gd" id="1_68yuk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bfuo0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpjlg"]
+albedo_color = Color(0.872672, 0.0005433, 0.85992, 1)
+
+[node name="Vrm3d" type="Node3D"]
+transform = Transform3D(1.47958, 0, 0, 0, 1.47958, 0, 0, 0, 1.47958, 0, 0, 0)
+script = ExtResource("1_68yuk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0565302, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bfuo0")
+surface_material_override/0 = SubResource("StandardMaterial3D_mpjlg")

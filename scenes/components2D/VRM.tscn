@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfpx1nmrghyvy"]
+
+[ext_resource type="PackedScene" uid="uid://b4xwsne13budd" path="res://scenes/components2D/ComponentBase.tscn" id="1_18c0o"]
+[ext_resource type="Script" uid="uid://cq5q7dncb3qjc" path="res://scripts/component scripts/vrm.gd" id="2_4heg8"]
+[ext_resource type="Texture2D" uid="uid://drtvc1yh65p1" path="res://sprites/VRM_BaseColor.png" id="2_5k178"]
+
+[node name="ComponentBase" instance=ExtResource("1_18c0o")]
+script = ExtResource("2_4heg8")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_5k178")
+
+[node name="Label" parent="." index="1"]
+visible = false
+text = "VRM: 
+Voltage Regulation Module - 
+controls the voltage level of 
+power going to/from 
+components to avoid frying something."

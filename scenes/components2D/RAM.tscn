@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bskyt3b6rqlaq"]
+
+[ext_resource type="PackedScene" uid="uid://b4xwsne13budd" path="res://scenes/components2D/ComponentBase.tscn" id="1_md2td"]
+[ext_resource type="Texture2D" uid="uid://5m6ls184jrvu" path="res://sprites/RAM_BaseColor.png" id="2_1gvkp"]
+[ext_resource type="Script" uid="uid://b4yeew5ukx3lj" path="res://scripts/component scripts/ram.gd" id="2_rnmk2"]
+
+[node name="ComponentBase" instance=ExtResource("1_md2td")]
+script = ExtResource("2_rnmk2")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_1gvkp")
+
+[node name="Label" parent="." index="1"]
+visible = false
+text = "RAM: 
+Random Access Memory - 
+running processes use this 
+to store needed data."

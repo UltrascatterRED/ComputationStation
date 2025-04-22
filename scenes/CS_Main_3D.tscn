@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dscfao4tvx8h"]
+
+[ext_resource type="PackedScene" uid="uid://dgvcjsfy8v7yk" path="res://scenes/components3D/CPU_3D.tscn" id="1_ow6w1"]
+[ext_resource type="PackedScene" uid="uid://dj1nb1pgobsj2" path="res://scenes/components3D/RAM_3D.tscn" id="2_aebqh"]
+[ext_resource type="PackedScene" uid="uid://dbrrgdgadtc6n" path="res://scenes/components3D/VRM_3D.tscn" id="3_dakxa"]
+
+[node name="CsMain3d" type="Node3D"]
+
+[node name="VRM" parent="." instance=ExtResource("3_dakxa")]
+transform = Transform3D(1.47958, 0, 0, 0, 1.47958, 0, 0, 0, 1.47958, 0.716154, 0, -3.67999)
+
+[node name="CPU" parent="." instance=ExtResource("1_ow6w1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.786929, 0.0283798, -0.334967)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.286478, 0.646475, 0, 0.914254, 0.405142, -0.707107, -0.286478, 0.646475, 1.59001, 1.91627, 1.89756)
+
+[node name="RAM" parent="." instance=ExtResource("2_aebqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.11329, 0, 0.253615)
+
+[node name="TempLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3398, 3.57133, 0)
+light_energy = 5.0

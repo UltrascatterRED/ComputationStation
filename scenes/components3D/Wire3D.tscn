@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3hhpl0glh014"]
+
+[ext_resource type="Script" uid="uid://dbf50uik34du4" path="res://scripts/wire3d.gd" id="1_dv0ah"]
+
+[sub_resource type="Curve3D" id="Curve3D_yr3g0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dv0ah"]
+
+[node name="Wire3d" type="Node3D"]
+script = ExtResource("1_dv0ah")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_yr3g0")
+
+[node name="WireMesh" type="CSGPolygon3D" parent="Path3D"]
+top_level = true
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 0.05, 0.1, 0.05, 0.1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+material = SubResource("StandardMaterial3D_dv0ah")

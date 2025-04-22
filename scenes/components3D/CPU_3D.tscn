@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgvcjsfy8v7yk"]
+
+[ext_resource type="Script" uid="uid://p1cwc0cade1k" path="res://scripts/cpu3d.gd" id="1_yuwvb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xlyne"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i314v"]
+albedo_color = Color(0, 0.366667, 1, 1)
+
+[node name="Cpu3d" type="Node3D"]
+script = ExtResource("1_yuwvb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.199574, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_xlyne")
+surface_material_override/0 = SubResource("StandardMaterial3D_i314v")
