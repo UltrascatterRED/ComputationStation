@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0jntsw76rh2j"]
+
+[ext_resource type="Script" uid="uid://3k5i6du2vmr2" path="res://scripts/socket_3d.gd" id="1_myi3u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ama3k"]
+size = Vector3(0.2, 0.3, 0.2)
+
+[node name="Socket3d" type="Node3D"]
+script = ExtResource("1_myi3u")
+
+[node name="SocketMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ama3k")

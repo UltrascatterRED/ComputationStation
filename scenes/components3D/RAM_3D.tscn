@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dgkr2ksxtyfem" path="res://scripts/ram3d.gd" id="1_1g3sf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cc4no"]
+size = Vector3(1, 0.2, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1g3sf"]
 albedo_color = Color(0.937333, 1, 0.06, 1)
@@ -11,6 +12,5 @@ albedo_color = Color(0.937333, 1, 0.06, 1)
 script = ExtResource("1_1g3sf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.196572, 0, 0, 0, 3.04316, 0, 0, 0)
 mesh = SubResource("BoxMesh_cc4no")
 surface_material_override/0 = SubResource("StandardMaterial3D_1g3sf")

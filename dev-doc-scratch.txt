@@ -1,0 +1,6 @@
+* Code follows an object-oriented paradigm
+  > Fields are set manually either in the _ready() function of an object, or as
+    needed in a higher function that must use an instance of that object. For
+    example, components initialize their main fields in _ready(), but "child"
+    objects (those that cannot exist without certain "parent" objects), like
+    wires, are instantiated in a calling function of the parent object.

@@ -1,0 +1,20 @@
+CLEANUP:
+* refactor to enums from hard-coded strings (where appropriate)
+* define meshes' initial size instead of scaling in the transform menu
+* refactor string (now enum) arrays in ComponentBase3D to inherit their values
+  from data in socket dictionaries ("sockets", "socket_anchors")
+* [maybe] look into _init() function use to have actual constructors for each
+  node to avoid multi-line initialization in parent node func (increased chance
+  for developer error)
+* [maybe] Learn how to write method descriptions (show up on hover like in C#) and write them
+* [maybe] Lookup arrays for component scene paths; fewer points of error/failure bc no more
+  hard-coded strings
+
+IMPLEMENT:
+* [maybe] encode wire directionality in some way (for data flow vis)
+  > might be unnecessary with socket types being a thing
+* Ability for player to place components and wires
+  > a menu of some kind to select thing to place
+  > "Ghost" components/wires that follow player mouse to provide visual feedback during
+    placement
+

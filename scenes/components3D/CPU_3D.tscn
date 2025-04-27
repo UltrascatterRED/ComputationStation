@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://p1cwc0cade1k" path="res://scripts/cpu3d.gd" id="1_yuwvb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xlyne"]
+size = Vector3(1, 0.2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i314v"]
 albedo_color = Color(0, 0.366667, 1, 1)
@@ -11,6 +12,5 @@ albedo_color = Color(0, 0.366667, 1, 1)
 script = ExtResource("1_yuwvb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.199574, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_xlyne")
 surface_material_override/0 = SubResource("StandardMaterial3D_i314v")
