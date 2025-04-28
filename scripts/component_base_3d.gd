@@ -1,12 +1,7 @@
 extends Node3D
 class_name ComponentBase3D
-# Every component must have these defined
 
-var component_type = "" # e.g., "cpu", "ram", "vrm"
-
-# these two likely deprecated
-var required_inputs = [] # e.g., ["power", "clock"]
-var allowed_outputs = [] # e.g., ["data", "control"]
+const io_type = preload("res://scripts/io_type.gd")
 
 # Sockets are defined locations on this component that accept a single,
 # specific input or output wire.
@@ -32,7 +27,7 @@ func _ready():
 
 # connects an output wire to a corresponding input socket
 # self.out_socket --[outputs power/data to]--> other_component.in_socket
-func connect_output_wire(from_socket: Socket3D, to_socket: Socket3D, wire_type: String):
+func connect_output_wire(from_socket: Socket3D, to_socket: Socket3D, wire_type: int):
 	# debug
 	#var from_sock_matches_wire: bool = wire_type == from_socket.wire_type
 	#var to_sock_matches_wire: bool = wire_type == to_socket.wire_type
@@ -54,8 +49,8 @@ func connect_output_wire(from_socket: Socket3D, to_socket: Socket3D, wire_type: 
 	if (wire_type == from_socket.wire_type and 
 	wire_type == to_socket.wire_type and 
 	sockets.values().has(from_socket) and 
-	from_socket.type == "out" and 
-	to_socket.type == "in"):
+	from_socket.type == Socket3D.io_flow.OUT and 
+	to_socket.type == Socket3D.io_flow.IN):
 		var tree = get_tree()
 		var wire = preload("res://scenes/components3D/Wire3D.tscn").instantiate()
 		
@@ -114,21 +109,21 @@ func _process(_delta):
 				output.update_position()
 	previous_pos = global_position
 
-func evaluate_state():
+#func evaluate_state():
 	# get types of all wires present in connected_inputs
-	var received_types = connected_inputs.values().map(func(w): return w.wire_type)
+#	var received_types = connected_inputs.values().map(func(w): return w.wire_type)
 
-	var has_all_required = true
-	for req in required_inputs:
-		if req not in received_types:
-			has_all_required = false
-			break
+#	var has_all_required = true
+#	for req in required_inputs:
+#		if req not in received_types:
+#			has_all_required = false
+#			break
 
-	if has_all_required:
-		state = "active"
-	else:
-		state = "idle"
-	update_visual_state()
+#	if has_all_required:
+#		state = "active"
+#	else:
+#		state = "idle"
+#	update_visual_state()
 
 func update_visual_state():
 	# replace print() with color modulation of mesh material

@@ -1,13 +1,15 @@
 extends Node3D
 class_name Socket3D
 
-# Parent component. All sockets must have one.
-# DEV NOTE: Assign parent FROM parent script (i.e. during _ready())
+enum io_flow { IN, OUT }
+const io_type = preload("res://scripts/io_type.gd")
+
 # type determines the direction of data/powr flow accepted by this socket
-var type: String # "in" or "out", short for input or output
+var type: io_flow # "in" or "out", short for input or output
+# Parent component. All sockets must have one.
 var parent_component: ComponentBase3D
 # wire type accepted by this instance
-var wire_type
+var wire_type: int
 # Actual wire node (if present)
 var wire : Node
 
@@ -16,9 +18,9 @@ func update_material():
 	# load material options for sockets
 	var power_mat = preload("res://materials/socket_power_MAT.tres")
 	var data_mat = preload("res://materials/socket_data_MAT.tres")
-	if self.wire_type == "power":
+	if self.wire_type == io_type.POWER:
 		mesh.set_surface_override_material(0, power_mat)
-	elif self.wire_type == "data":
+	elif self.wire_type == io_type.DATA:
 		mesh.set_surface_override_material(0, data_mat)
 	else:
 		print("Invalid or null wire type!")
